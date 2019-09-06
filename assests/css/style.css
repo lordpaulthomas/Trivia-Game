@@ -17,6 +17,13 @@ body{
     display: block;
 }
 
+#clock {
+    background-color: cornsilk;
+    color: brown;
+    display: table;
+    position: absolute;
+    left: 30%;
+}
 #backdrop {
     width: 800px;
     height: 100vh;
@@ -24,11 +31,22 @@ body{
     margin-left: 10vw;
 }
 #results {
-    font-size: 20px;
+   
+    font-size: 30px;
     background-color: black;
     color: orange;
 }
 
-#button {
+#startButton {
     margin-top: 10px;
+    background-color: whitesmoke;
+}
+
+#startGame {
+    background-color: red;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%,50%);
+    font-size: 40px;
 }

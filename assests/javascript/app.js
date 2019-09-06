@@ -4,6 +4,8 @@
 const quizContainer$ = document.getElementById("quiz");
 const resultsContainer$ = document.getElementById("results");
 const submitButton$ = document.getElementById("submit");
+
+
 let count = 120;
 const questionArray = [
     {
@@ -64,7 +66,7 @@ function buildQuiz() {
                     ${currentQuestion.answers[letter]}
                     </label>`
                 );
-            }
+            }   
             output.push(
                 `<div class="question"> ${currentQuestion.question} </div>
                 <div class="answers"> ${answers.join("")} </div>`
@@ -76,6 +78,7 @@ function buildQuiz() {
 }
 
 // show results function
+
 const showResults = () => {
     const answerContainers = quizContainer$.querySelectorAll('.answers');
     let numCorrect = 0;
@@ -83,15 +86,12 @@ const showResults = () => {
         const answerContainer = answerContainers[questionNumber];
         const selector = 'input[name=question' + questionNumber + ']:checked';
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-        if (userAnswer === currentQuestion.correctAnswer) {
-            numCorrect++;
-            answerContainers[questionNumber].style.color = 'lightgreen';
+        if(userAnswer===currentQuestion.correctAnswer){
+            numCorrect++
         }
-        else {
-            answerContainers[questionNumber].style.color = 'red';
-        }
+
     });
-    resultsContainer$.innerHTML = `${numCorrect} out of ${questionArray.length}`
+    resultsContainer$.innerHTML = `<h2>You got ${numCorrect} out of ${questionArray.length}</h2>`
 }
 var intervalID;
 
@@ -123,8 +123,30 @@ $(".pause-button").on("click", function () {
     audioElement.pause();
 });
 
-buildQuiz();
-run();
+
+backdrop$ = $('#backdrop');
+
+result$ = $('#results')
+backdrop$.hide();
+
+
+
+startGame$ = $('#startGame');
+
+startGame$.html('<h1>Click here to start Harry Potter Trivia Game?</h1>')
+
+$('#startGame').on("click", function(){
+    backdrop$.show();
+    buildQuiz();
+    run();  
+    
+})
+
+    
+
+
+
+
 
 submitButton$.addEventListener("click", showResults);
 
