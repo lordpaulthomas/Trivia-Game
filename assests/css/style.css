@@ -1,5 +1,34 @@
-.triviaGame {
-    background-color: blue;
-    padding: 20px;
-    width: 80vw;
+body{
+    background: url(../images/hp.jpg);
+    background-position: center;
+    background-size: cover;
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #333;
+    text-align: center;
+}
+.question{
+    font-weight: 600;
+}
+.answers {
+    margin-bottom: 10px;
+}
+.answers label {
+    display: block;
+}
+
+#backdrop {
+    width: 800px;
+    height: 100vh;
+    margin: 50px;
+    margin-left: 10vw;
+}
+#results {
+    font-size: 20px;
+    background-color: black;
+    color: orange;
+}
+
+#button {
+    margin-top: 10px;
 }

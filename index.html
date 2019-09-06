@@ -12,11 +12,21 @@
 </head>
 
 <body>
-<div class="triviaGame" id="triviaGame"></div>
-
-
-
-
+    <div class="container">
+        <div class="text-center">
+            <button class="btn btn-warning btn-xs theme-button" id="button">
+                <span class="fa fa-music"></span> Play Theme!</button>
+            <button class="btn btn-default btn-xs pause-button" id="button">
+                <span class="fa fa-pause"></span> Pause Song</button>
+        </div>
+   
+        <div id= "backdrop" class="text-center text-dark bg-white col-12">
+            <div id="clock"></div>
+            <div id="quiz" class="col-md-12"></div>
+            <button type='button' class="btn btn-secondary" id="submit">Submit Quiz</button>
+            <div id="results" class="col-lg-12 text-center text-primary"></div>
+        </div>
+    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
