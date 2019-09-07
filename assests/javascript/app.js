@@ -6,7 +6,7 @@ const resultsContainer$ = document.getElementById("results");
 const submitButton$ = document.getElementById("submit");
 
 
-let count = 20;
+let count = 60;
 const questionArray = [
     {
         question: "Who becomes the Minister for Magic When Cornelius Fudge resigns?",
@@ -52,7 +52,7 @@ const questionArray = [
         question: "What was Fred and George's joke shop's name?",
         answers: {
             a: 'Mims and Sprouts',
-            b: 'Weasley Wizarding Gadets',
+            b: "Weasley's Wizarding Gadets",
             c: 'Wizard Wheezes',
             d: 'Cloaks and Jokes'
         },
@@ -125,7 +125,7 @@ const decrement = () => {
 
 const stop = () => {
     clearInterval(intervalID);
-    count = 20;
+    count = 60;
 }
 
 var audioElement = document.createElement("audio");

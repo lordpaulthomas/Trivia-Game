@@ -8,13 +8,17 @@
 body{
     background: url(../images/hp.jpg);
     
-    background-size: cover;
-   
-   
+    background-size: cover; 
     font-size: 15px;
-    font-family: sans-serif;
-    color: #333;
+    
     text-align: center;
+}
+
+#quiz{
+    padding-top: 15px;
+    color: darkslategrey;
+    background-color: bisque;
+    padding-bottom: 15px;
 }
 .question{
     font-weight: 600;
@@ -22,24 +26,26 @@ body{
 }
 .answers {
     margin-bottom: 10px;
-    font-size: 14px;
+    font-size: 18px;
 }
 .answers label {
     display: block;
 }
 
 #clock {
-    background-color: cornsilk;
+    background-color: bisque;
     color: brown;
     display: table;
     position: absolute;
-    left: 38%;
+    left: 36%;
     padding: 3px;
     margin-top: 3px;
+    margin-bottom: 3px;
+    border: solid 2px black;
 }
 #backdrop {
     width: 800px;
-    
+    background-color: black;
     margin: 50px;
     margin-left: 10vw;
 }
@@ -48,9 +54,9 @@ body{
     display: table;
     position: absolute;
     top: 50%;
-    right: 50%;
+    right: 38%;
     font-size: 230px;
-    background-color: whitesmoke;
+    background-color: bisque;
     color: red;
     text-shadow: 0 1px 0 black;
 }
@@ -58,6 +64,9 @@ body{
 #startButton {
     margin-top: 10px;
     background-color: whitesmoke;
+}
+#startGame:hover{
+    background-color: green;
 }
 
 #startGame {
