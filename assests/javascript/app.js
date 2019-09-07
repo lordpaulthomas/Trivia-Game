@@ -52,7 +52,7 @@ const questionArray = [
 ]
 
 
-function buildQuiz() {
+const buildQuiz = () => {
     const output = [];
 
     questionArray.forEach(
@@ -108,6 +108,7 @@ const decrement = () => {
         backdrop$.hide();
         stop();
         showResults();
+        audioElement.pause();
     }
 
 }
@@ -155,6 +156,7 @@ submitButton$.addEventListener("click", function () {
     backdrop$.hide();
     stop();
     showResults();
+    audioElement.pause();
 });
 
 
