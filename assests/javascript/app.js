@@ -66,7 +66,7 @@ function buildQuiz() {
                     ${currentQuestion.answers[letter]}
                     </label>`
                 );
-            }   
+            }
             output.push(
                 `<div class="question"> ${currentQuestion.question} </div>
                 <div class="answers"> ${answers.join("")} </div>`
@@ -86,7 +86,7 @@ const showResults = () => {
         const answerContainer = answerContainers[questionNumber];
         const selector = 'input[name=question' + questionNumber + ']:checked';
         const userAnswer = (answerContainer.querySelector(selector) || {}).value;
-        if(userAnswer===currentQuestion.correctAnswer){
+        if (userAnswer === currentQuestion.correctAnswer) {
             numCorrect++
         }
 
@@ -103,8 +103,11 @@ const decrement = () => {
     count--;
     $("#clock").html("<h2>You have " + count + " seconds left!</h2>")
     if (count === 0) {
+        clock$.hide();
+        result$.show();
+        backdrop$.hide();
         stop();
-        showResults;
+        showResults();
     }
 
 }
@@ -136,17 +139,17 @@ startGame$ = $('#startGame');
 
 startGame$.html('<h1>Click here to start Harry Potter Trivia Game?</h1>')
 
-$('#startGame').on("click", function(){
+$('#startGame').on("click", function () {
     clock$.show()
     result$.hide()
     backdrop$.show();
     buildQuiz();
-    run();  
-    
+    run();
+
 })
 
 
-submitButton$.addEventListener("click", function(){
+submitButton$.addEventListener("click", function () {
     clock$.hide();
     result$.show();
     backdrop$.hide();
