@@ -131,3 +131,18 @@ body{
 }
 
 
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-track {
+    background: bisque;
+}
+
+::-webkit-scrollbar-thumb {
+    background: red;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: green;
+}
