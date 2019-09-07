@@ -1,7 +1,16 @@
+*{
+    font-family: 'Crimson Text', serif;
+}
+.btn{
+    margin-top: 5px;
+    float: center;
+}
 body{
     background: url(../images/hp.jpg);
-    background-position: center;
+    
     background-size: cover;
+   
+   
     font-size: 15px;
     font-family: sans-serif;
     color: #333;
@@ -9,9 +18,11 @@ body{
 }
 .question{
     font-weight: 600;
+    font-size: 20px;
 }
 .answers {
     margin-bottom: 10px;
+    font-size: 14px;
 }
 .answers label {
     display: block;
@@ -22,22 +33,26 @@ body{
     color: brown;
     display: table;
     position: absolute;
-    left: 30%;
+    left: 38%;
+    padding: 3px;
+    margin-top: 3px;
 }
 #backdrop {
     width: 800px;
-    height: 100vh;
+    
     margin: 50px;
     margin-left: 10vw;
 }
 #results {
+   
     display: table;
     position: absolute;
     top: 50%;
     right: 50%;
-    font-size: 130px;
+    font-size: 230px;
     background-color: whitesmoke;
-    color: orange;
+    color: red;
+    text-shadow: 0 1px 0 black;
 }
 
 #startButton {
@@ -46,6 +61,7 @@ body{
 }
 
 #startGame {
+    text-shadow: 0 1px 1px white;
     background-color: red;
     position: absolute;
     top: 50%;

@@ -44,10 +44,20 @@ const questionArray = [
             a: 'Chefs',
             b: 'Dentists',
             c: 'Opticians',
-            d: 'Artists',
+            d: 'Artists'
         },
         correctAnswer: 'b'
     },
+    {
+        question: "What was Fred and George's joke shop's name?",
+        answers: {
+            a: 'Mims and Sprouts',
+            b: 'Weasley Wizarding Gadets',
+            c: 'Wizard Wheezes',
+            d: 'Cloaks and Jokes'
+        },
+        correctAnswer: 'c'
+    }
 
 ]
 
@@ -158,8 +168,6 @@ submitButton$.addEventListener("click", function () {
     showResults();
     audioElement.pause();
 });
-
-
 
 
 
