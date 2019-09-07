@@ -239,5 +239,3 @@ submitButton$.addEventListener("click", function () {
     audioElement.pause();
 });
 
-
-
