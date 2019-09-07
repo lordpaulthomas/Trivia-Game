@@ -89,11 +89,45 @@ body{
     font-size: 40px;
 }
 
+@media screen and (max-width: 640px){
+    body{
+        width: 500px;
+        height: 0px;
+        font-size: 15px;
+    }
 
+   
+    .title{
+        font-size: 90px;
+    }
 
+    #startGame{
+        padding: 0;
+        margin: 0;
+        position: absolute;
+        bottom: 130px;
+        font-family: serif;
+        font-size: 20px;
+        height: 100px;
+        width: 270px;
+        
+    }
+    #results{
+        font-size: 10px;
+    }
+    #quiz{
+        width: 300px;
+    }
+    #clock{
+    display: table;
+    position: absolute;
+    left: 20%;
+    padding: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border: solid 2px black;
 
+    }
+}
 
-
-
-  
 

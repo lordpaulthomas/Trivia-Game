@@ -212,7 +212,7 @@ backdrop$.hide();
 clock$ = $('#clock');
 startGame$ = $('#startGame');
 // button to begin quiz
-startGame$.html('<h1>Click here to start Harry Potter Trivia Game?</h1>')
+startGame$.html('<p>Click here to start Harry Potter Trivia Game?</p>')
 // when start button is clicked
 $('#startGame').on("click", function () {
     // start the game
