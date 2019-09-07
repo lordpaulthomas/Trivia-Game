@@ -6,7 +6,7 @@ const resultsContainer$ = document.getElementById("results");
 const submitButton$ = document.getElementById("submit");
 
 
-let count = 60;
+let count = 120;
 const questionArray = [
     {
         question: "Who becomes the Minister for Magic When Cornelius Fudge resigns?",
@@ -19,7 +19,7 @@ const questionArray = [
         correctAnswer: 'a'
     },
     {
-        question: "How many brother and sisters does Ron have?",
+        question: "How many brothers and sisters does Ron have?",
         answers: {
             a: "2",
             b: "6",
@@ -53,7 +53,7 @@ const questionArray = [
         answers: {
             a: "Wizard's Tricks",
             b: "Weasley's Wizarding Gadets",
-            c: 'Wizard Wheezes',
+            c: "Weasley's Wizard Wheezes",
             d: 'Cloaks and Jokes'
         },
         correctAnswer: 'c'
@@ -113,11 +113,16 @@ const questionArray = [
 
 // build Quiz function 
 const buildQuiz = () => {
+    // empty array to store HTML output
     const output = [];
+    // for each question
     questionArray.forEach(
         (currentQuestion, questionNumber) => {
+            // store the multiple answer choices
             const answers = [];
+            // for every answer 
             for (letter in currentQuestion.answers) {
+                // add a radio button
                 answers.push(
                     `<label>
                     <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -126,13 +131,14 @@ const buildQuiz = () => {
                     </label>`
                 );
             }
+            // add this question and multiple choice answers to the HTML output
             output.push(
                 `<div class="question"> ${currentQuestion.question} </div>
                 <div class="answers"> ${answers.join("")} </div>`
             );
         }
     );
-
+    // combine output to a string and display on page
     quizContainer$.innerHTML = output.join("");
 }
 
@@ -140,17 +146,18 @@ const buildQuiz = () => {
 
 const showResults = () => {
     const answerContainers = quizContainer$.querySelectorAll('.answers');
+    let unAnswered = 0;
     let numCorrect = 0;
     questionArray.forEach((currentQuestion, questionNumber) => {
         const answerContainer = answerContainers[questionNumber];
         const selector = 'input[name=question' + questionNumber + ']:checked';
-        const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+        const userAnswer = (answerContainer.querySelector(selector) || {}&&unAnswered++).value;
         if (userAnswer === currentQuestion.correctAnswer) {
             numCorrect++
         }
 
     });
-    resultsContainer$.innerHTML = `<h2>You got ${numCorrect} out of ${questionArray.length}</h2>`
+    resultsContainer$.innerHTML = `<h2>Correct Answers: ${numCorrect} </h2><h3>Incorrect Answers: ${questionArray.length-numCorrect}</h3><h3>Unanswered Questions: ${unAnswered}</h3>`
 }
 
 // create time interval variable
@@ -180,7 +187,7 @@ const decrement = () => {
 const stop = () => {
     clearInterval(intervalID);
     // reset timer for next quiz
-    count = 60;
+    count = 120;
 }
 
 // create audio element
@@ -197,6 +204,8 @@ $(".pause-button").on("click", function () {
 });
 
 // jquery reference variables for displaying on page
+btn$ = $('.btn')
+btn$.hide();
 backdrop$ = $('#backdrop');
 result$ = $('#results')
 backdrop$.hide();
@@ -207,6 +216,7 @@ startGame$.html('<h1>Click here to start Harry Potter Trivia Game?</h1>')
 // when start button is clicked
 $('#startGame').on("click", function () {
     // start the game
+    btn$.show()
     clock$.show()
     result$.hide()
     backdrop$.show();
@@ -219,6 +229,7 @@ $('#startGame').on("click", function () {
 // when submit button is clicked
 submitButton$.addEventListener("click", function () {
     // remove quiz and clock and display results
+    btn$.hide();
     clock$.hide();
     result$.show();
     backdrop$.hide();

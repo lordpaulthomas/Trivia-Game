@@ -1,23 +1,26 @@
 *{
     font-family: 'Crimson Text', serif;
 }
+.container{
+    background: url(../images/1-basic.png);
+}
+
 .btn{
     margin-top: 5px;
     float: center;
 }
 body{
-    background: url(../images/hp.jpg);
-    
+    background: url(../images/hp.jpg); 
     background-size: cover; 
-    font-size: 15px;
-    
+    font-size: 15px;  
     text-align: center;
 }
 
 #quiz{
+    border: darkred solid 5px;
     padding-top: 15px;
-    color: darkslategrey;
     background-color: bisque;
+    color: darkslategrey;
     padding-bottom: 15px;
 }
 .question{
@@ -49,11 +52,10 @@ body{
     margin: 50px;
     margin-left: 10vw;
 }
-#results {
-   
+#results {  
     display: table;
     position: absolute;
-    top: 50%;
+    top: 30%;
     right: 38%;
     font-size: 230px;
     background-color: bisque;
