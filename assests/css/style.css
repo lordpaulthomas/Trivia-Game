@@ -63,7 +63,7 @@ body{
 #results {  
     display: table;
     position: absolute;
-    top: 30%;
+    top: 45%;
     right: 38%;
     font-size: 230px;
     background-color: bisque;
@@ -83,7 +83,7 @@ body{
     text-shadow: 0 1px 1px white;
     background-color: red;
     position: absolute;
-    top: 50%;
+    top: 65%;
     right: 50%;
     transform: translate(50%,50%);
     font-size: 40px;
