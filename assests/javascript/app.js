@@ -6,7 +6,7 @@ const resultsContainer$ = document.getElementById("results");
 const submitButton$ = document.getElementById("submit");
 
 
-let count = 120;
+let count = 20;
 const questionArray = [
     {
         question: "Who becomes the Minister for Magic When Cornelius Fudge resigns?",
@@ -111,6 +111,7 @@ const decrement = () => {
 
 const stop = () => {
     clearInterval(intervalID);
+    count = 20;
 }
 
 var audioElement = document.createElement("audio");
@@ -128,7 +129,7 @@ backdrop$ = $('#backdrop');
 
 result$ = $('#results')
 backdrop$.hide();
-
+clock$ = $('#clock');
 
 
 startGame$ = $('#startGame');
@@ -136,19 +137,22 @@ startGame$ = $('#startGame');
 startGame$.html('<h1>Click here to start Harry Potter Trivia Game?</h1>')
 
 $('#startGame').on("click", function(){
+    clock$.show()
+    result$.hide()
     backdrop$.show();
     buildQuiz();
     run();  
     
 })
 
-    
 
-
-
-
-
-submitButton$.addEventListener("click", showResults);
+submitButton$.addEventListener("click", function(){
+    clock$.hide();
+    result$.show();
+    backdrop$.hide();
+    stop();
+    showResults();
+});
 
 
 

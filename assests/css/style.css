@@ -31,9 +31,12 @@ body{
     margin-left: 10vw;
 }
 #results {
-   
-    font-size: 30px;
-    background-color: black;
+    display: table;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    font-size: 130px;
+    background-color: whitesmoke;
     color: orange;
 }
 
