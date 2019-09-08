@@ -148,6 +148,7 @@ const showResults = () => {
     const answerContainers = quizContainer$.querySelectorAll('.answers');
     let unAnswered = 0;
     let numCorrect = 0;
+    let incorrect = [];
     // loop through each question
     questionArray.forEach((currentQuestion, questionNumber) => {
         const answerContainer = answerContainers[questionNumber];
@@ -156,9 +157,13 @@ const showResults = () => {
         if (userAnswer === currentQuestion.correctAnswer) {
             numCorrect++
         }
+        else {
+            incorrect.push(questionArray[questionNumber].question);
+        }
 
     });
-    resultsContainer$.innerHTML = `<h2>Correct Answers: ${numCorrect} </h2><h3>Incorrect Answers: ${questionArray.length-numCorrect}</h3><h3>Unanswered Questions: ${unAnswered}</h3>`
+    resultsContainer$.innerHTML = `<h3>Correct Answers: ${numCorrect} </h3><h3>Incorrect Answers: ${questionArray.length-numCorrect}</h3><h3>Unanswered Questions: ${unAnswered}</h3>
+    <h4>Questions you missed: </h4><h6>   ${incorrect.join("")}   </h6>`
 }
 
 // create time interval variable
@@ -189,7 +194,7 @@ const decrement = () => {
 const stop = () => {
     clearInterval(intervalID);
     // reset timer for next quiz
-    count = 120;
+    count = 100;
 }
 
 // create audio element
@@ -218,6 +223,7 @@ startGame$.html('<p>Click here to start Harry Potter Trivia Game?</p>')
 // when start button is clicked
 $('#startGame').on("click", function () {
     // start the game
+    audioElement.play()
     btn$.show()
     clock$.show()
     result$.hide()
