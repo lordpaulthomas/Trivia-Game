@@ -148,10 +148,11 @@ const showResults = () => {
     const answerContainers = quizContainer$.querySelectorAll('.answers');
     let unAnswered = 0;
     let numCorrect = 0;
+    // loop through each question
     questionArray.forEach((currentQuestion, questionNumber) => {
         const answerContainer = answerContainers[questionNumber];
         const selector = 'input[name=question' + questionNumber + ']:checked';
-        const userAnswer = (answerContainer.querySelector(selector) || {}&&unAnswered++).value;
+        const userAnswer = (answerContainer.querySelector(selector) || {} && unAnswered++).value;
         if (userAnswer === currentQuestion.correctAnswer) {
             numCorrect++
         }
@@ -174,6 +175,7 @@ const decrement = () => {
 
     // this is what happens when time runs out
     if (count === 0) {
+        btn$.hide()
         clock$.hide();
         result$.show();
         backdrop$.hide();
